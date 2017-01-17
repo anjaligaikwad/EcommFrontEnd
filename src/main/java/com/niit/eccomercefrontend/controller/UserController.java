@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.ecommercebackend.dao.UserDAO;
+import com.niit.ecommercebackend.model.BillingAddress;
+import com.niit.ecommercebackend.model.ShippingAddress;
 import com.niit.ecommercebackend.model.User;
 	@Controller
 
@@ -20,7 +22,11 @@ import com.niit.ecommercebackend.model.User;
 		
 		@RequestMapping("/register")
 		public ModelAndView register() {
+			BillingAddress billingAddress = new BillingAddress();
+			ShippingAddress shippingAddress = new ShippingAddress();
 			User u = new User();
+			u.setBillingAddress(billingAddress);
+			u.setShippingAddress(shippingAddress);
 			ModelAndView model = new ModelAndView("register");
 			model.addObject("Userdata",u);
 			return model;	

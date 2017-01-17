@@ -1,4 +1,10 @@
-<link href="${css}/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="cd" uri="http://www.springframework.org/tags"%>
+<%@ page isELIgnored="false"%><link href="${css}/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="${js}/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -41,21 +47,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-left">
                                             <ul>
                                         	
-					        <li ><a href="login"  >Login</a></li>
-						<li><a  href="register"  >Register</a></li>
+					 <c:if test="${pageContext.request.userPrincipal.name != null }">
+
+							<li><a>Welcome:
+									${pageContext.request.userPrincipal.name}</a></li>
+							<li><a href="<c:url value='/Logout'/>">Logout</a></li>
+
+						</c:if>
+
+
+
+
+						<!-- when user not logged in -->
+						<c:if test="${pageContext.request.userPrincipal.name == null }">
+							<li><a href="<c:url value='/Login'/>">Login</a></li>
+							<li><a href="<c:url value='/register'/>"> Create Account
+							</a></li>
+						</c:if>
 
 					</ul>
 			
-				<div class="search-box">
-					<div id="sb-search" class="sb-search">
-						<form action="#" method="post">
-							<input class="sb-search-input" placeholder="Enter your search term..." type="search"  id="search">
-							<input class="sb-search-submit" type="submit" value="">
-							<span class="sb-icon-search"> </span>
-						</form>
+<!-- 				<div class="search-box"> -->
+<!-- 					<div id="sb-search" class="sb-search"> -->
+<%-- 						<form action="#" method="post"> --%>
+<!-- 							<input class="sb-search-input" placeholder="Enter your search term..." type="search"  id="search"> -->
+<!-- 							<input class="sb-search-submit" type="submit" value=""> -->
+<!-- 							<span class="sb-icon-search"> </span> -->
+<%-- 						</form> --%>
                                             
-					</div>
-				</div>
+<!-- 					</div> -->
+<!-- 				</div> -->
 			
 <!-- search-scripts -->
 					<script src="${js}/classie.js"></script>
@@ -90,8 +111,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  <div class=" h_menu4">
 				<ul class="memenu skyblue">
 					  <li><a class="color8" href="index">HOME</a></li>	
-				      <li><a class="color1" href="supplier">PRODUCTS</a></li>
+				      <li><a class="color1" href="listproducts">PRODUCTS</a></li>
  				      					
+				    <security:authorize access="hasRole('ROLE_ADMIN')">
 				    <li><a class="color1" href="product">ADMIN</a>
 				    
 				      	<div class="mepanel">
@@ -120,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						
 							</li>
-				   
+				   </security:authorize>
 				<li><a class="color4" href="AboutUs">ABOUT US</a></li>	
 			
 				<li><a class="color6" href="contact">CONTACT</a></li>
@@ -131,3 +153,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</div>
 	</div>
+	
+	<script src="${js}/angular.min.js"></script>

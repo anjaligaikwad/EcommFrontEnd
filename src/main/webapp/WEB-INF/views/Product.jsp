@@ -74,7 +74,7 @@
 			<div class="account-pass">
 				<div class="col-md-8 account-top">
 
-<!-- 					<div class="col-sm-4"></div> -->
+					<!-- 					<div class="col-sm-4"></div> -->
 					<form:form action="${addAction}" commandName="product"
 						enctype="multipart/form-data">
 						<table>
@@ -108,14 +108,16 @@
 								<td><form:label path="categoryName">
 										<spring:message text="Category" />
 									</form:label></td>
-								<td><form:select class="form-control" items="${Catgname}" path ="categoryName"/></td>
+								<td><form:select class="form-control" items="${Catgname}"
+										path="categoryName" /></td>
 							</tr>
 
 							<tr>
 								<td><form:label path="supplierName">
 										<spring:message text="supplier" />
 									</form:label></td>
-								<td><form:select class="form-control" items="${Supname}" path="supplierName"/></td>
+								<td><form:select class="form-control" items="${Supname}"
+										path="supplierName" /></td>
 							</tr>
 
 							<tr>
@@ -138,13 +140,13 @@
 
 
 							<tr>
-								<td colspan="2"><c:if test="${!empty productName}">
-										<input type="submit"
-											value="<spring:message text="Edit Product"/>" />
-									</c:if> <c:if test="${empty productName}">
-										<input type="submit"
-											value="<spring:message text="Add Product"/>" />
-									</c:if></td>
+								<%-- 								<td colspan="2"><c:if test="${!empty productName}"> --%>
+								<!-- 										<input type="submit" -->
+								<%-- 											value="<spring:message text="Edit Product"/>" /> --%>
+								<%-- 									</c:if> <c:if test="${empty productName}"> --%>
+								<input type="submit"
+									value="<spring:message text="Add Product"/>" />
+								<%-- 									</c:if></td> --%>
 							</tr>
 						</table>
 					</form:form>

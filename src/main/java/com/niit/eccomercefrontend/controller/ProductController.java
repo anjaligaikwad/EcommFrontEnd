@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.ecommercebackend.dao.ProductDAO;
@@ -73,9 +74,13 @@ public class ProductController {
 		}
 		else{
 			if (product.getProductId() == 0) {
+				System.out.println(product.getProductId());
 				productDAO.addProduct(product);
+				System.out.println("adding");
 			} else {
 				productDAO.updateProduct(product);
+				System.out.println(product.getProductId());
+				System.out.println("updating");
 			}
 
 			System.out.println("h3");
@@ -96,10 +101,18 @@ public class ProductController {
 	public String editProduct(@PathVariable("id") int id, Model model)
 	{
 		model.addAttribute("product", productDAO.getProductById(id));
+		System.out.println("Hello 1");
         model.addAttribute("listProducts", productDAO.listProducts());
+        System.out.println("hello 2");
+        this.update();
         return "editProduct";
 	}
 	
+	private void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@RequestMapping(value ="/listproducts")
 	public String ViewProduct(Model model){
 		System.out.println("h1");
@@ -108,4 +121,11 @@ public class ProductController {
 
 		return "Productlist";
 	}
+	@RequestMapping(value = "/listproductsjson")
+	public @ResponseBody List<Product> listProdInJSON(){
+		return productDAO.listProducts();	
+	}
+
+
+
 }

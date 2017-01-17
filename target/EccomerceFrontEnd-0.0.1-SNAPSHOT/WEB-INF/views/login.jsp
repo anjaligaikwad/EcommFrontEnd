@@ -35,7 +35,7 @@
 			<form action="<c:url value="j_spring_security-check"/> "method="post">
 				
 			<div> 	
-				<Span>Email</span>
+				<Span>User name</span>
 				<input type="text" name="j_User_id"> 
 			</div>
 			<div> 

@@ -121,8 +121,8 @@
 		<security:authentication-provider>
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
-				authorities-by-username-query="Select User_Email , User_role from User WHERE User_Email = ?"
-				users-by-username-query="Select User_Email, Password, 'true' from User WHERE User_Email = ?" />
+				authorities-by-username-query="Select User_Name , User_role from User WHERE User_Name = ?"
+				users-by-username-query="Select User_Name, Password, 'true' from User WHERE User_Name = ?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 

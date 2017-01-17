@@ -41,21 +41,19 @@
 
 <c:url var="addAction" value="/supplier/add" ></c:url>
 <div align="center">
-<form:form action="${addAction}" commandName="supplier" enctype="multipart/form-data">
+<form:form action="${addAction}" modelAttribute="supplier" enctype="multipart/form-data">
 <table>
-	<c:if test="${!empty supplierName}">
 	<tr>
 		<td>
-			<form:label path="id">
+			<form:label path="supplierId">
 				<spring:message text="ID"/>
 			</form:label>
 		</td>
 		<td>
-			<form:input path="id" readonly="true" size="8"  disabled="true" />
-			<form:hidden path="id" />
+			<form:input path="supplierId" readonly="true" size="8"  />
+			<form:hidden path="supplierId" />
 		</td> 
 	</tr>
-	</c:if>
 	<tr>
 	
 		<td>

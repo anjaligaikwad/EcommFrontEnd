@@ -153,3 +153,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</div>
 	</div>
+	
+	<script src="${js}/angular.min.js"></script>
