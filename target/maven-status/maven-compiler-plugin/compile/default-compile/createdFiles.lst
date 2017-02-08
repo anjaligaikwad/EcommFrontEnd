@@ -1,6 +1,8 @@
 com\niit\eccomercefrontend\controller\CategoryController.class
+com\niit\eccomercefrontend\controller\ProductController.class
+com\niit\eccomercefrontend\controller\CartController.class
 com\niit\eccomercefrontend\controller\SupplierController.class
 com\niit\eccomercefrontend\controller\UserController.class
+com\niit\eccomercefrontend\controller\CartItemController.class
 com\niit\eccomercefrontend\controller\HomeContoller.class
-com\niit\eccomercefrontend\controller\ProductController.class
 com\niit\eccomercefrontend\config\ApplicationContextConfig.class

@@ -18,7 +18,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Yaruis About Us</title>
+<title>About Us</title>
 
 </head>
 
@@ -28,33 +28,48 @@
 
 
 
+<style>
+ 
 
+ .account h4 {
+   text-align: center;
+   background-color: white;
+    width: 70%;
+    border: 2px solid black;
+    padding: 30px;
+    margin: 50px;
+  
+}
+</style>
 	<div class="grow">
 		<div class="container">
-			<h2>About US</h2>
+			<h2>ABOUT US</h2>
 		</div>
 	</div>
 
 	<!--content-->
+
 	<div class="container">
 		<div class="account">
 			<div class="account-pass">
-				<div class="col-md-8 account-top">
-					<h3>About Yaruis</h3>
-					<form>
-						<h1>Hello Everyone!</h1>
-						<br>
+				<div class="col-md-12 account-top">
+					<div align="center">
+					<h3>All About Mattress </h3>
+					
 						<h4>
-							We at <b> Yaruis</b> welcome you to the ultimate shopping
-							experince on the planet! It has the best products and the
+							We Welcome you to the ultimate shopping
+							experince on the planet. It has the best products and the
 							categories are so well sorted so that you can get to the product
 							you want as quick as you want saving you time which can be spent
-							on shopping more!
+							on shopping more.
+							<br>
 						</h4>
 
 				</div>
 			</div>
 		</div>
+		</div>
+		
 		<!--login-->
 	</div>
 	<!--content-->

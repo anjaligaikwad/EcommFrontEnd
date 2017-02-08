@@ -35,12 +35,14 @@
 
 				<c:url var="addAction" value="/register/add"></c:url>
 				<form:form action="saveuser" commandName="Userdata" method="post">
-					<form:input type="text" path="User_Id" placeholder="UserID"></form:input>
-					<form:input type="text" path="User_Name" placeholder="UserName"></form:input>
-					<form:input class="form-control" type="email" path="User_Email"
-						placeholder="Email"></form:input>
-					<form:input type="password" path="Password" placeholder="Password"></form:input>
-					<form:input type="text" path="Phone_Number" placeholder="MobileNo."></form:input>
+					<form:input type="text" path="userid" placeholder="userid"></form:input>
+					<form:input type="text" path="username" placeholder="username"></form:input>
+					<form:input class="form-control" type="email" path="useremail"
+						placeholder="useremail"></form:input>
+					<form:input type="password" path="userpassword"
+						placeholder="userpassword"></form:input>
+					<form:input type="text" path="userphoneno"
+						placeholder="userphoneno."></form:input>
 
 					<h3>Billing address</h3>
 					<form:input type="text" path="billingAddress.flatno"
@@ -78,7 +80,6 @@
 						placeholder="country name"></form:input>
 					<form:input type="text" path="shippingAddress.zipcode"
 						placeholder="zipcode"></form:input>
-
 					<input type="submit" value="Register">
 				</form:form>
 			</div>

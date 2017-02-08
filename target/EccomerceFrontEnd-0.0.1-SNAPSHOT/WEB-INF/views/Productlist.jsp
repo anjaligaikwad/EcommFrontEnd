@@ -82,6 +82,7 @@
 				<th width="120">Product Name</th>
 				<th width="120">Brand</th>
 				<th width="120">image</th>
+				<th width="120">price</th>
 				<security:authorize access="hasRole('ROLE_ADMIN')">
 					<th width="60">Edit</th>
 					<th width="60">Delete</th>
@@ -92,12 +93,12 @@
 			<tr ng-repeat="p in products | filter:searchConditionprod">
 
 				<td>{{p.productId}}</td>
-				<td>{{p.productName}}</td>
+				<td><a href="<c:url value='/infoprod/{{p.productId}}'/>">{{p.productName}}</td>
 				<td>{{p.brand}}</td>
-			<c:url value="/resources/images/{{p.productId}}.jpg" var="imgg"></c:url>
-			<td><img src="${imgg}" hieght="80" width="80"/></td>
-			
-		
+				<c:url value="/resources/images/{{p.productId}}.jpg" var="imgg"></c:url>
+				<td><img src="${imgg}" hieght="80" width="80" /></td>
+
+				<td>{{p.price}}</td>
 				<security:authorize access="hasRole('ROLE_ADMIN')">
 					<td><a href="<c:url value='/edit/{{p.productId}}' />">Edit</a></td>
 					<td><a href="<c:url value='/remove/{{p.productId}}' />">Delete</a></td>

@@ -62,7 +62,7 @@
 
 	<div class="grow">
 		<div class="container">
-			<h2>Product List{{210+210}}</h2>
+			<h2>Product List</h2>
 		</div>
 	</div>
 
@@ -93,7 +93,7 @@
 			<tr ng-repeat="p in products | filter:searchConditionprod">
 
 				<td>{{p.productId}}</td>
-				<td>{{p.productName}}</td>
+				<td><a href="<c:url value='/infoprod/{{p.productId}}'/>">{{p.productName}}</td>
 				<td>{{p.brand}}</td>
 				<c:url value="/resources/images/{{p.productId}}.jpg" var="imgg"></c:url>
 				<td><img src="${imgg}" hieght="80" width="80" /></td>

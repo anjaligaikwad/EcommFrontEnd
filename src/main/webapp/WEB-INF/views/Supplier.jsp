@@ -14,7 +14,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath }" />
 
 <html>
-<!-- <!-- <style> --> -->
+<!-- <!-- <style> --> 
 <!-- /* .key  input[type="text"] ,.key  input[type="password"]{ */ -->
 <!-- /*     width: 87%; */ -->
 <!-- /*     padding: 10px 10px; */ -->
@@ -37,7 +37,7 @@
 <!-- /*     border: 1px solid #999; */ -->
 <!-- /*     margin-bottom: 2em; */ -->
 <!-- /* } */ -->
-<!-- <!-- </style> --> -->
+<!-- <!-- </style> -->
 
 <head>
 <!-- header -->

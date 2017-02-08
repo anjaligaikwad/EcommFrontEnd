@@ -18,14 +18,7 @@
 <head>
 <title>Product Page</title>
 </head>
-<body>
-	<%@include file="Header.jsp"%>
-	<div class="grow">
-		<div class="container">
-			<h2>Edit Product</h2>
-		</div>
-	</div>
-	<style type="text/css">
+<style type="text/css">
 .tg {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -63,25 +56,32 @@
 	background-color: #f9f9f9
 }
 </style>
+<body>
+	<%@include file="Header.jsp"%>
+	<div class="grow">
+		<div class="container">
+			<h2>Edit Product</h2>
+		</div>
+	</div>
+
 	<h1>Add a Product</h1>
 
-<%-- 	<c:url var="addAction" value="/product/add"></c:url> --%>
+	<%-- 	<c:url var="addAction" value="/product/add"></c:url> --%>
 
-<c:set var="contextPath" value="${pageContext.request.contextPath }"/>
+	<c:set var="contextPath" value="${pageContext.request.contextPath }" />
 
 
-	<form:form action="${contextPath}/product/add" commandName="product"
+	<form:form action="${contextPath}/product/add" modelAttribute="product" method="post"
 		enctype="multipart/form-data">
 		<table>
-	
-				<tr>
-					<td><form:label path="productId">
-							<spring:message text="productId" />
-						</form:label></td>
-					<td><form:input path="productId" readonly="true" size="8"
-							disabled="true" /></td>
-				</tr>
-	
+
+			<tr>
+				<td><form:label path="productId">
+						<spring:message text="productId" />
+					</form:label></td>
+				<td><form:input path="productId" readonly="true" size="8" /></td>
+			</tr>
+
 			<tr>
 				<td><form:label path="productName">
 						<spring:message text="productName" />

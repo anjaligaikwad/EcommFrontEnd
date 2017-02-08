@@ -12,8 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.ecommercebackend.dao.UserDAO;
 import com.niit.ecommercebackend.model.BillingAddress;
+import com.niit.ecommercebackend.model.Cart;
 import com.niit.ecommercebackend.model.ShippingAddress;
-import com.niit.ecommercebackend.model.User;
+import com.niit.ecommercebackend.model.UserCustomer;
 	@Controller
 
 	public class UserController {
@@ -24,16 +25,18 @@ import com.niit.ecommercebackend.model.User;
 		public ModelAndView register() {
 			BillingAddress billingAddress = new BillingAddress();
 			ShippingAddress shippingAddress = new ShippingAddress();
-			User u = new User();
+			Cart cart = new Cart();
+			UserCustomer u = new UserCustomer();
 			u.setBillingAddress(billingAddress);
 			u.setShippingAddress(shippingAddress);
+			u.setCart(cart);
 			ModelAndView model = new ModelAndView("register");
 			model.addObject("Userdata",u);
 			return model;	
 			}
 		
 		@RequestMapping(value = "/saveuser", method = RequestMethod.POST)
-		public String adduser(@Valid @ModelAttribute("Userdata")User reg,BindingResult result)
+		public String adduser(@Valid @ModelAttribute("Userdata")UserCustomer reg,BindingResult result)
 		{
 			udao.save(reg);
 			return "index";

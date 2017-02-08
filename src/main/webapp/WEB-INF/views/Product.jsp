@@ -108,7 +108,7 @@
 								<td><form:label path="categoryName">
 										<spring:message text="Category" />
 									</form:label></td>
-								<td><form:select class="form-control" items="${Catgname}"
+								<td><form:select class="form-control" items="${catgname}"
 										path="categoryName" /></td>
 							</tr>
 
@@ -116,7 +116,7 @@
 								<td><form:label path="supplierName">
 										<spring:message text="supplier" />
 									</form:label></td>
-								<td><form:select class="form-control" items="${Supname}"
+								<td><form:select class="form-control" items="${supname}"
 										path="supplierName" /></td>
 							</tr>
 
@@ -144,11 +144,10 @@
 								<!-- 										<input type="submit" -->
 								<%-- 											value="<spring:message text="Edit Product"/>" /> --%>
 								<%-- 									</c:if> <c:if test="${empty productName}"> --%>
-								<input type="submit"
-									value="<spring:message text="Add Product"/>" />
 								<%-- 									</c:if></td> --%>
 							</tr>
 						</table>
+						<input type="submit" value="<spring:message text="Add Product"/>" />
 					</form:form>
 				</div>
 			</div>

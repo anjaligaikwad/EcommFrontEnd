@@ -88,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<div class="ca-r">
 					<div class="cart box_1">
-						<a href="checkout">
+						<a href="cart/getCartId">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span> </div>
 							<img src="${img }/cart.png" alt=""/></h3>
@@ -106,24 +106,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="head-top">
 				<div class="logo">
-					<h1><a href="index">Mattress</a></h1>
+					<h1><a href="<c:url value='/index'/>">Mattress</a></h1>
 				</div>
 		  <div class=" h_menu4">
 				<ul class="memenu skyblue">
-					  <li><a class="color8" href="index">HOME</a></li>	
-				      <li><a class="color1" href="listproducts">PRODUCTS</a></li>
+					  <li><a class="color8" href="<c:url value='/index'/>">HOME</a></li>	
+				      <li><a class="color1" href="<c:url value='/listproducts'/>">PRODUCTS</a></li>
  				      					
 				    <security:authorize access="hasRole('ROLE_ADMIN')">
-				    <li><a class="color1" href="product">ADMIN</a>
+				    <li><a class="color1" >ADMIN</a>
 				    
 				      	<div class="mepanel">
 						<div class="row">
 							<div class="col1">
 								<div class="h_nav">
 									<ul>
-										<li><a href="listproducts">Product list</a></li>
-										<li><a href="listsuppliers">Supplier List</a></li>
-										<li><a href="#">Category List</a></li>
+										<li><a href="<c:url value='/listproducts'/>">Product list</a></li>
+										<li><a href="<c:url value='/listsuppliers'/>">Supplier List</a></li>
+										<li><a href="<c:url value='/listCategory'/>">Category List</a></li>
 										
 									</ul>	
 								</div>							
@@ -131,9 +131,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col1">
 								<div class="h_nav">
 									<ul>
-										<li><a href="product">Add Product</a></li>
-										<li><a href="supplier">Add Supplier</a></li>
-										<li><a href="category">Add Category</a></li>
+										<li><a href="<c:url value='/product'/>">Add Product</a></li>
+										<li><a href="<c:url value='/supplier'/>">Add Supplier</a></li>
+										<li><a href="<c:url value='/category'/>">Add Category</a></li>
 										
 									</ul>	
 								</div>							
@@ -143,9 +143,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 							</li>
 				   </security:authorize>
-				<li><a class="color4" href="AboutUs">ABOUT US</a></li>	
+				<li><a class="color4" href="<c:url value='/AboutUs'/>">ABOUT US</a></li>	
 			
-				<li><a class="color6" href="contact">CONTACT</a></li>
+				<li><a class="color6" href="<c:url value='/contact'/>">CONTACT</a></li>
 			  </ul> 
 			</div>
 				
